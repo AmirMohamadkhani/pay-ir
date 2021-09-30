@@ -104,8 +104,8 @@ class PayIrClient:
                 One of exceptions.verification according to the returned status code.
         """
 
-        if not isinstance(trans_id, int):
-            raise TypeError('trans_id should be of int type.')
+        #if not isinstance(trans_id, int):
+            #raise TypeError('trans_id should be of int type.')
 
         verify_data = {
             'api': self.api_key,
