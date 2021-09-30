@@ -86,8 +86,8 @@ class PayIrClient:
         response = get_json(requests.post(API_URL_SEND, json=init_data))
         if not init_has_exceptions(response['status']):
             return {
-                'trans_id': response['transId'],
-                'payment_url': API_URL_PAYMENT_GATEWAY.format(trans_id=response['transId'])
+                'trans_id': response['token'],
+                'payment_url': API_URL_PAYMENT_GATEWAY.format(trans_id=response['token'])
             }
 
 
