@@ -82,8 +82,9 @@ class PayIrClient:
             init_data['mobile'] = mobile
         if description:
             init_data['description'] = description
-
-        response = get_json(requests.post(API_URL_SEND, data=init_data))
+        res = requests.post(API_URL_SEND, data=init_data)
+        print(res)
+        response = get_json(res)
         if not init_has_exceptions(response['status']):
             return {
                 'trans_id': response['transId'],
